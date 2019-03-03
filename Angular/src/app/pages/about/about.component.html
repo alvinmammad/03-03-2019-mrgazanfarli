@@ -1,0 +1,96 @@
+<!-- Strat Breadcrumb Area -->
+<section class="breadcrumb-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="breadcrumb-content text-center">
+          <h2>Know About Us</h2>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">About Us</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Breadcrumb Area -->
+<!-- Start Creative Area -->
+<section class="creative-area section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-6">
+        <div class="creative-content">
+          <h2>{{about?.title}}</h2>
+          <p>{{about?.text}}</p>
+          <a class="btn" href="#">Get Services</a>
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-6">
+        <div class="creative-image-block">
+          <div class="creative-image">
+            <img src="{{about?.photo}}" alt="{{about?.title}}" title="{{about?.title}}">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Creative Area -->
+<!-- Start Counter Area -->
+<section class="counter-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="counter-content">
+          <div class="counter-block">
+            <div *ngFor="let fact of facts" class="counter-content-single">
+              <h2>
+                <span class="timer" data-from="1" [attr.data-to]="fact.value" data-speed="5000" data-refresh-interval="50">{{fact.value}}</span>
+                <span *ngIf="fact.type!=null" class="small">{{fact.type}}</span>
+              </h2>
+              <h4>{{fact.key}}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Counter Area -->
+<!-- Start Blog Area -->
+<section class="blog-area section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="blog-title">
+          <h4>Latest Blog</h4>
+          <h2>Our Blog and Tips</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="blog">
+          <!-- Single Blog -->
+          <div *ngFor="let blog of blogs" class="single-news">
+            <div class="blog-content">
+              <h3><a routerLink="/blog/{{blog.slug}}">{{blog.title}}</a></h3>
+              <p>{{blog.desc}}</p>
+              <ul class="blog-meta list-style">
+                <li><a href="#">
+                    <img src="{{blog.author.photo}}" alt="img">{{blog.author.fullname}}</a>
+                </li>
+                <li><a href="#">{{blog.date}}</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Blog Area -->
